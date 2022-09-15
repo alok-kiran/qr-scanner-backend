@@ -4,19 +4,13 @@ module.exports = class DB {
   }
 
   addRecord = async (data) =>
-    new Promise((r) => {
+    new Promise((resolve) => {
       this.records.push(data);
-      r();
+      resolve();
     });
 
-  getRecordByUserId = async (id) => {
-    return new Promise((resolve, reject) => {
-      const data = this.records.filter((item) => item.userId === id);
-      if (data?.length) {
-        resolve(data);
-      } else {
-        reject([]);
-      }
+  getRecordByUserId = async (id) =>
+    new Promise((resolve) => {
+      resolve(this.records.filter((item) => item.userId === id));
     });
-  };
 };
