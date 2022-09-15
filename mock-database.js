@@ -1,15 +1,6 @@
 module.exports = class DB {
   constructor() {
-    this.records = [
-      {
-        userId: "1",
-        name: "Alok",
-      },
-      {
-        userId: "2",
-        name: "Sasmit",
-      },
-    ];
+    this.records = [];
   }
 
   addRecord = async (data) =>
