@@ -3,7 +3,7 @@ const express = require("express");
 const { v4: uuidv4 } = require("uuid");
 const DB = require("./mock-database");
 const app = express();
-const port = 3008;
+const port = process.env.PORT || 3008;
 
 const store = new DB();
 
