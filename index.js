@@ -9,7 +9,7 @@ const store = new DB();
 
 app.get("/message", async (req, res) => {
   try {
-    const { qrcode, userId } = req.query;
+    const { qrcode, userId, name } = req.query;
     const { data } = await axios.get(
       `https://docs.bcomo.com/qrcode/${qrcode}`,
       {
@@ -20,6 +20,7 @@ app.get("/message", async (req, res) => {
       id: uuidv4(),
       userId,
       qrcode,
+      name,
       response: data,
       timestamp: new Date().getTime(),
     });
